@@ -22,6 +22,24 @@ No cookies are stored to identify a browser.
 It's worth noting that a mobile share of browsers is much more uniform, so fingerprinting should be used
 only as a supplementary identifying mechanism there.
 
+### Installation
+
+If you're on Rails, add this to your Gemfile
+`
+gem 'fingerprintjs-rails'
+`
+and 
+
+`bundle install`
+
+After that you can add the file to sprockets:
+
+`
+//= require fingerprint
+`
+
+Otherwise, just copy the file to your js directory.
+
 ### Usage
 
 ```javascript

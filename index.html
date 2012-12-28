@@ -52,6 +52,24 @@ to produce a fingerprint that gives weak guarantees of uniqueness.</p>
 <p>It's worth noting that a mobile share of browsers is much more uniform, so fingerprinting should be used
 only as a supplementary identifying mechanism there.</p>
 
+<h3>Installation</h3>
+
+<p>If you're on Rails, add this to your Gemfile
+<code>
+gem 'fingerprintjs-rails'
+</code>
+and </p>
+
+<p><code>bundle install</code></p>
+
+<p>After that you can add the file to sprockets:</p>
+
+<p><code>
+//= require fingerprint
+</code></p>
+
+<p>Otherwise, just copy the file to your js directory.</p>
+
 <h3>Usage</h3>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">fingerprint</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fingerprint</span><span class="p">().</span><span class="nx">get</span><span class="p">();</span>

@@ -1,45 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <title>Fingerprintjs by Valve</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Fingerprintjs by Valve</title>
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Fingerprintjs</h1>
+        <p class="header">Fast browser fingerprint</p>
 
-        <header>
-          <h1>Fingerprintjs</h1>
-          <h2>Fast browser fingerprint</h2>
-        </header>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/Valve/fingerprintJS/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/Valve/fingerprintJS/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/Valve/fingerprintJS">View On GitHub</a></li>
+        </ul>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/Valve/fingerprintJS/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/Valve/fingerprintJS/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/Valve/fingerprintJS" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/Valve">Valve</a></p>
 
-        <hr>
 
-        <section id="main_content">
-          <h1>fingerprintJS</h1>
+      </header>
+      <section>
+        <h1>fingerprintJS</h1>
 
-<p>Fast browser fingerprint library. Written in pure JavaScript, no dependencies. By default uses Murmur hashing with easy override. </p>
+<p>Fast browser fingerprint library. Written in pure JavaScript, no dependencies. 
+By default uses <a href="http://en.wikipedia.org/wiki/MurmurHash">Murmur hashing</a> with easy override.
+Feather weight: only <strong>843 bytes</strong> when gzipped.</p>
 
 <h3>Usage</h3>
 
-<p><code>
-var fingerprint = new Fingerprint().get();
-</code></p>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">fingerprint</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fingerprint</span><span class="p">().</span><span class="nx">get</span><span class="p">();</span>
+</pre></div>
+
+<p>Using custom hashing function</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">hasher</span> <span class="o">=</span> <span class="k">new</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">seed</span><span class="p">){</span> <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="o">%</span> <span class="nx">seed</span><span class="p">;</span> <span class="p">}</span>
+<span class="kd">var</span> <span class="nx">fingerprint</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fingerprint</span><span class="p">(</span><span class="nx">hasher</span><span class="p">).</span><span class="nx">get</span><span class="p">();</span>
+</pre></div>
 
 <h3>Licence</h3>
 
@@ -52,15 +58,12 @@ var fingerprint = new Fingerprint().get();
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-        </section>
-
-        <footer>
-          Fingerprintjs is maintained by <a href="https://github.com/Valve">Valve</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>

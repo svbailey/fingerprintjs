@@ -6,6 +6,22 @@ By default uses [Murmur hashing][murmur] and returns a 32bit integer number.
 Hashing function can be easily replaced.
 Feather weight: only **843** bytes when gzipped.
 
+## What is fingerprinting?
+
+Fingerprinting is a technique, outlined in [the research by Electronic Frontier Foundation], of
+anonymously identifying a web browser with accuracy of up to 94%. 
+
+
+Browser is queries its agent string, screen resolution and color depth, 
+installed plugins with supported mime types, timezone offset and other capabilities, 
+such as local storage and session storage. Then these values are passed through a hashing function
+to produce a fingerprint that gives weak guarantees of uniqueness.
+
+No cookies are stored to identify a browser.
+
+It's worth noting that a mobile share of browsers is much more uniform, so fingerprinting should be used
+only as a supplementary identifying mechanism.
+
 ### Usage
 
 ```javascript
@@ -35,3 +51,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [mit]: http://www.opensource.org/licenses/mit-license.php
 [murmur]: http://en.wikipedia.org/wiki/MurmurHash
+[research]: https://panopticlick.eff.org/browser-uniqueness.pdf

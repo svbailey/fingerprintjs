@@ -8,7 +8,7 @@ Feather weight: only **843** bytes when gzipped.
 
 ## What is fingerprinting?
 
-Fingerprinting is a technique, outlined in [the research by Electronic Frontier Foundation], of
+Fingerprinting is a technique, outlined in [the research by Electronic Frontier Foundation][research], of
 anonymously identifying a web browser with accuracy of up to 94%. 
 
 

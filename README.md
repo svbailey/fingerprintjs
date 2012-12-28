@@ -1,7 +1,22 @@
 fingerprintJS
 =============
 
-Fast browser fingerprint library. Written in pure JavaScript, no dependencies. By default uses Murmur hashing with easy override.
+Fast browser fingerprint library. Written in pure JavaScript, no dependencies. 
+By default uses [Murmur hashing][murmur] with easy override.
+Feather weight: only **843** bytes when gzipped.
+
+### Usage
+
+```javascript
+var fingerprint = new Fingerprint().get();
+```
+
+Using custom hashing function
+
+``` javascript
+var hasher = new function(value, seed){ return value.length % seed; }
+var fingerprint = new Fingerprint(hasher).get();
+```
 
 ### Licence
 
@@ -18,3 +33,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 [mit]: http://www.opensource.org/licenses/mit-license.php
+[murmur]: http://en.wikipedia.org/wiki/MurmurHash

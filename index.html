@@ -1,12 +1,25 @@
 <html>
 <head>
+  <title>FingerprintJS</title>
+  <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+    body{
+      font-family: 'Sans'
+    }
+    .fancy{
+      font-family: 'Fjalla One', cursive;
+    }
+  </style>
   <script src="fingerprint.js"></script>
-  <script>
-    var fp = new Fingerprint();
-    var s = fp.get();
-    alert(s);
-  </script>
 </head>
 <body>
+  <center>
+    <h3 style="margin-top: 60px">Your browser fingerprint is:</h3>
+    <h1 id="fp" class="fancy"></h1>
+  </center>
+  <script>
+    var fp = new Fingerprint();
+    document.getElementById('fp').innerHTML = fp.get();
+  </script>
 </body>
 </html>

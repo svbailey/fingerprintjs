@@ -2,7 +2,8 @@ fingerprintJS
 =============
 
 Fast browser fingerprint library. Written in pure JavaScript, no dependencies. 
-By default uses [Murmur hashing][murmur] with easy override.
+By default uses [Murmur hashing][murmur] and returns a 32bit integer number.
+Hashing function can be easily replaced.
 Feather weight: only **843** bytes when gzipped.
 
 ### Usage

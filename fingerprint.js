@@ -1,4 +1,10 @@
-function Fingerprint(){
+/*
+* fingerprintJS 0.1 - Fast browser fingerprint library
+* https://github.com/Valve/fingerprintJS
+* Copyright (c) 2013 Valentin Vasilyev (iamvalentin@gmail.com)
+* Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.
+*/
+function Fingerprint(hasher){
   var nativeForEach = Array.prototype.forEach;
   var nativeMap = Array.prototype.map;
   this.each = function(obj, iterator, context) {
@@ -26,6 +32,10 @@ function Fingerprint(){
     });
     return results;
   };
+
+  if(hasher){
+    this.hasher = hasher;
+  }
 }
 
 Fingerprint.prototype = {
@@ -44,7 +54,11 @@ Fingerprint.prototype = {
       return [p.name, p.description, mimeTypes].join('::');
     }, this).join(';');
     keys.push(pluginsString);
-    return this.murmurhash3_32_gc(keys.join('###'), 31);
+    if(this.hasher){
+      return this.hasher(keys.join('###'), 31);
+    } else {
+      return this.murmurhash3_32_gc(keys.join('###'), 31);
+    }
   },
 
   /**

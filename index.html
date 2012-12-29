@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="javascripts/scale.fix.js"></script>
+    <script src="https://raw.github.com/Valve/fingerprintJS/master/fingerprint.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -81,6 +82,10 @@ and </p>
 <span class="kd">var</span> <span class="nx">fingerprint</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fingerprint</span><span class="p">(</span><span class="nx">hasher</span><span class="p">).</span><span class="nx">get</span><span class="p">();</span>
 </pre></div>
 
+<p>Your browser fingerprint</p>
+<p><code id="fp"></code></p>
+
+
 <h3>Licence</h3>
 
 <p>This code is <a href="http://www.opensource.org/licenses/mit-license.php">MIT</a> licenced:</p>
@@ -98,6 +103,9 @@ and </p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script>
+      document.getElementById('fp').innerHTML = new Fingerprint().get();
+    </script>
 		
   </body>
 </html>
